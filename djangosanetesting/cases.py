@@ -12,13 +12,14 @@ from nose.tools import (
                 assert_false,
 )
 from nose import SkipTest
+from unittest import TestCase
 
 from djangosanetesting.utils import twill_patched_go, twill_xpath_go, extract_django_traceback
 
 __all__ = ("UnitTestCase", "DatabaseTestCase", "DestructiveDatabaseTestCase",
            "HttpTestCase", "SeleniumTestCase", "TemplateTagTestCase")
 
-class SaneTestCase(object):
+class SaneTestCase(TestCase):
     """ Common ancestor we're using our own hierarchy """
     start_live_server = False
     database_single_transaction = False
